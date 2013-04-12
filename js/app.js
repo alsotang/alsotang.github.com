@@ -43,7 +43,7 @@ Ember.Handlebars.registerBoundHelper('post_time', function(name) {
 
   post_time = name.split('_')[0];
 
-  return '----post at %@'.fmt(post_time.replace('-', '/'));
+  return '----post at %@'.fmt(post_time.replace(/\-/g, '/'));
 });
 
 
