@@ -25,16 +25,27 @@ Ember.Handlebars.registerBoundHelper('markdown', function(content) {
   return new Handlebars.SafeString(html_content);
 });
 
-Ember.Handlebars.registerBoundHelper('post_title', function(title) {
-  if(title === undefined) {
+Ember.Handlebars.registerBoundHelper('post_title', function(name) {
+  if(name === undefined) {
     return '';
   }
 
-  title = title.split('_')[1];
-  title = title.split('.')[0];
+  post_title = name.split('_')[1];
+  post_title = post_title.split('.')[0];
 
-  return "<%@>".fmt(title);
+  return '<%@>'.fmt(post_title);
 });
+
+Ember.Handlebars.registerBoundHelper('post_time', function(name) {
+  if(name === undefined) {
+    return '';
+  }
+
+  post_time = name.split('_')[0];
+
+  return '----post at %@'.fmt(post_time.replace('-', '/'));
+});
+
 
 App.TitlesController = Ember.ArrayController.extend({
   content: [],

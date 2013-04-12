@@ -60,6 +60,7 @@
 
                 {{#each App.titlesController.reverse}}
                   {{#view App.NavListView}} <a href='#' {{action 'loadPost' this target='App.titlesController'}}> {{post_title name}} </a> {{/view}}
+                  <p class='muted'>{{post_time name}}</p>
                 {{/each}}
 
               </ul>
