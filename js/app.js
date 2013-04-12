@@ -1,5 +1,6 @@
 var githubName = "alsotang";
 var repos = 'alsotang.github.com';
+var converter = new Showdown.converter();
 
 App = Ember.Application.create();
 
@@ -13,6 +14,16 @@ App.LoadingCSS = Ember.View.extend({
     });
   }
 });
+
+
+Ember.Handlebars.registerBoundHelper('markdown', function(content) {
+  if(content === undefined) {
+    return '';
+  }
+
+  var html_content = converter.makeHtml(content);
+  return new Handlebars.SafeString(html_content);
+}, 'content');
 
 App.TitlesController = Ember.ArrayController.extend({
   content: [],

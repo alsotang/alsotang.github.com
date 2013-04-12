@@ -94,7 +94,7 @@
             {{/view}}
 
             {{#with App.postController}}
-              <p>{{{post_content}}}</p>
+              <p>{{markdown post_content}}</p>
             {{/with}}
 
           </div><!--/span-->
@@ -120,6 +120,8 @@
     <script src="/js/vendor/bootstrap.min.js"></script>
     <script src="/js/vendor/handlebars-1.0.0-rc.3.js"></script>
     <script src="/js/vendor/ember-1.0.0-rc.2.js"></script>
+    <script src="/js/vendor/showdown.js"></script>
+
     <script src="/js/app.js"></script>
 
     <script src="/js/main.js"></script>
