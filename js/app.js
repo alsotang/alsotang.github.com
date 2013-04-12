@@ -8,9 +8,9 @@ App.LoadingCSS = Ember.View.extend({
   didInsertElement: function() {
     var $windows8 = $('.windows8');
     $(document).ajaxStart(function() {
-      $windows8.fadeIn();
+      $windows8.show();
     }).ajaxStop(function() {
-      $windows8.fadeOut('slow');
+      $windows8.hide();
     });
   }
 });
