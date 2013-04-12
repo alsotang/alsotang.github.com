@@ -23,7 +23,18 @@ Ember.Handlebars.registerBoundHelper('markdown', function(content) {
 
   var html_content = converter.makeHtml(content);
   return new Handlebars.SafeString(html_content);
-}, 'content');
+});
+
+Ember.Handlebars.registerBoundHelper('post_title', function(title) {
+  if(title === undefined) {
+    return '';
+  }
+
+  title = title.split('_')[1];
+  title = title.split('.')[0];
+
+  return "<%@>".fmt(title);
+});
 
 App.TitlesController = Ember.ArrayController.extend({
   content: [],

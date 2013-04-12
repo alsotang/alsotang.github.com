@@ -54,12 +54,12 @@
     <script type="text/x-handlebars">
       <div class="container-fluid">
         <div class="row-fluid">
-          <div class="span2">
+          <div class="span3">
             <div class="well sidebar-nav">
               <ul class="nav nav-list">
 
                 {{#each App.titlesController.reverse}}
-                  {{#view App.NavListView}} <a href='#' {{action 'loadPost' this target='App.titlesController'}}> {{name}} </a> {{/view}}
+                  {{#view App.NavListView}} <a href='#' {{action 'loadPost' this target='App.titlesController'}}> {{post_title name}} </a> {{/view}}
                 {{/each}}
 
               </ul>
@@ -99,7 +99,7 @@
 
           </div><!--/span-->
 
-          <div class="span4">
+          <div class="span3">
             <p>Side Bar</p>
           </div>
 
