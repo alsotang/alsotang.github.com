@@ -3,6 +3,17 @@ var repos = 'alsotang.github.com';
 
 App = Ember.Application.create();
 
+App.LoadingCSS = Ember.View.extend({
+  didInsertElement: function() {
+    var $windows8 = $('.windows8');
+    $(document).ajaxStart(function() {
+      $windows8.fadeIn();
+    }).ajaxStop(function() {
+      $windows8.fadeOut('slow');
+    });
+  }
+});
+
 App.TitlesController = Ember.ArrayController.extend({
   content: [],
   init: function() {
@@ -14,6 +25,7 @@ App.TitlesController = Ember.ArrayController.extend({
       $.each( posts.data, function( i, post) {
         _this.pushObject(post);
       });
+      $('.windows8').hide();
     });
   },
   reverse: function() {
@@ -32,6 +44,7 @@ App.titlesController = App.TitlesController.create();
 App.PostController = Ember.ObjectController.extend({});
 
 App.postController = App.PostController.create();
+
 
 
 /* make bootstrap navlist response to link active from Emberjs.*/
