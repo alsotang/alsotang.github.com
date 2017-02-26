@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>随机成语</title>
+    <style media="screen">
+      body {
+        font-size: 24px;
+      }
+
+      .show_idiom_desc {
+        height: 500px;
+        margin-top: 10px;
+      }
+
+      .change_idiom {
+        color: white;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="show_idiom">
+
+    </div>
+    <div class="show_idiom_desc">
+
+    </div>
+    <button class="change_idiom" type="button" name="button">切换</button>
+  </body>
+
+  <script src="https://cdn.staticfile.org/jquery/3.1.1/jquery.js" charset="utf-8"></script>
+  <script src="/js/idioms.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(function () {
+      function chooseRandomIdiom() {
+        var maxLength = alsotangIdioms.length;
+        var chooseIndex = parseInt(Math.random() * 10000000, 10) % maxLength
+        var idiomObj = alsotangIdioms[chooseIndex]
+        return idiomObj
+      }
+
+      var $show_idiom = $('.show_idiom')
+      var $show_idiom_desc = $('.show_idiom_desc')
+
+      $('.change_idiom').click(function () {
+        var idiomObj = chooseRandomIdiom()
+        $show_idiom.text(idiomObj.idiom)
+        $show_idiom_desc.text(idiomObj.desc)
+      })
+      $('.change_idiom').click()
+    })
+  </script>
+</html>
