@@ -1,6 +1,6 @@
 ## Before run this script, you should define $VITE_ADDR outside. Otherwise you would not receive fullnode rewards.
 
-GVITE_VERSION=v2.3.0
+GVITE_VERSION=v2.3.1
 VITE_DIR=$HOME/gvite
 ETH0_IP=`/sbin/ifconfig eth0 | grep 'inet' | awk '{print $2}' | head -n1`
 
