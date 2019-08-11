@@ -25,13 +25,6 @@ CONF_DIR="/etc/vite"
 BIN_DIR="/usr/local/vite"
 LOG_DIR=$HOME/.gvite
 
-echo "install config to "$CONF_DIR
-
-
-sudo mkdir -p $CONF_DIR
-sudo cp $CUR_DIR/node_config.json $CONF_DIR
-ls  $CONF_DIR/node_config.json
-
 echo "install executable file to "$BIN_DIR
 sudo mkdir -p $BIN_DIR
 mkdir -p $LOG_DIR
